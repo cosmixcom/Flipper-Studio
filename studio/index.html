@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://unpkg.com/prismjs@latest/components/prism-core.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/prismjs@latest/themes/prism.css" />
+<link rel="stylesheet" href='style.css'>
+<title>Ducky Studio</title>
+  <script src="save.js"></script>
+  <script src="publish.js"></script>
+</head>
+<body style="background: #141414;">
+  <div class="topnav">
+  <a class="logo" href="/">
+Ducky Studio
+  </a>
+<a class="save_button" id="savebtn">
+  Export
+  </a>
+  <a class="save_button" id="load">
+Load
+  </a>
+      <a class="save_button" id="run_btn">
+Docs
+    </a>
+    
+        <!-- <a class="save_button" onclick="switchTheme(this)">
+              ‏‏‎  ‏‏‎   Toggle Light Mode
+    </a> -->
+
+      <!-- <a id="new_tab" style="save_button">Deploy To Pages</a> -->
+        <script src="idk.js">
+    </script>
+</div>
+
+  <form id="aiForm" style="display: none;">
+    <input class="ai" id="ai">
+  </form>
+  
+  
+  <input type="file" id="fileInput" style="display:none;" accept="txt">
+
+<div id="editor">STRING Hello World!</div>
+
+  
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+//   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+//   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+//   // TODO: Add SDKs for Firebase products that you want to use
+//   // https://firebase.google.com/docs/web/setup#available-libraries
+
+//   // Your web app's Firebase configuration
+//   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDelFI3VdZG_0G_SEMWrmB_WKRcw3ZNWFw",
+//   authDomain: "auth-e7b21.firebaseapp.com",
+//   projectId: "auth-e7b21",
+//   storageBucket: "auth-e7b21.appspot.com",
+//   messagingSenderId: "877231972674",
+//   appId: "1:877231972674:web:7a629ac207bfca644168db",
+//   measurementId: "G-3CMXJWW5B6"
+// };
+// export default firebaseConfig;
+//   // Initialize Firebase
+//   const app = initializeApp(firebaseConfig);
+//   const analytics = getAnalytics(app);
+
+//   import { getStorage, ref, uploadString } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js"; 
+// import { getDownloadURL } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js";
+
+  
+ var num=0;
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.session.setMode("ace/mode/html");
+  
+  // document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
+
+  function switchTheme(elem){if (num === 0){num=1;     editor.setTheme("ace/theme/crimson_editor"); elem.innerText="‏‏‎  ‏‏‎   Toggle Dark Mode";
+} else {num=0;     editor.setTheme("ace/theme/twilight"); elem.innerText="‏‏‎  ‏‏‎   Toggle Light Mode";
+}}
+
+  document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
+
+function handleFileSelect(event){
+  const reader = new FileReader()
+  reader.onload = handleFileLoad;
+  reader.readAsText(event.target.files[0])
+}
+
+function handleFileLoad(event){
+  console.log(event);
+editor.setValue(event.target.result, -1);
+  
+}
+
+  document.querySelector('#load').addEventListener('click', () => {
+    document.getElementById('fileInput').click()
+  })
+  
+  document.querySelector('#savebtn').addEventListener('click', save)
+  let closed = false;
+    
+function save() {
+  if (closed === false) {
+    //window.prompt("File name");
+    var savePrompt = `xploit-ducky-${Math.random().toString(36).substring(7)}`
+    if (savePrompt !== null) {
+        var blob = new Blob([editor.getValue()], {type: "text/plain;charset=utf-8"});
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement("a");
+        link.href = url;
+        link.download = `${savePrompt}.txt`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link); // Cleanup
+      exportMenu(document.querySelector('#savebtn'))
+      closed = true;
+    }
+  } else {
+    closed = false;
+    document.querySelector('#savebtn').textContent = "Export";
+  }
+  
+
+
+
+
+
+//   var sr = "saves/" + window.localStorage.getItem("uid") + '/' + savePrompt + '.orion'
+//   var sre = window.btoa(sr)
+  
+//   const storage = getStorage();
+// const storageRef = ref(storage, sr);
+
+
+// uploadString(storageRef, window.btoa(editor.getValue())).then((snapshot) => {
+//   console.log('Uploaded raw string: ', editor.getValue() + ", Encode VER: " + window.btoa(editor.getValue()));
+//   });
+  
+}
+  
+  
+
+  function runCode(element){
+    var frame=document.createElement('iframe');
+    frame.id="runcode";
+    frame.style="position:fixed; top:0; right:0; width:40%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; background: white;";
+frame.src= `https://web.archive.org/web/20220816200129/http://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript`
+    document.body.appendChild(frame);
+    element.textContent="Close";
+    element.onclick=function(){
+          element.textContent="Run";
+      frame.remove();
+          element.onclick=function(){runCode(element)};
+    }
+  }
+
+  function exportMenu(element){
+      var frame=document.createElement('iframe');
+      frame.id="runcode";
+      frame.style="position:fixed; top:0; right:0; width:40%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; background: white;";
+  frame.src= `https://docs.flipper.net/bad-usb#IomSQ`
+      document.body.appendChild(frame);
+      element.textContent="Close";
+      element.onclick=function(){
+        frame.remove();
+            element.onclick=""
+      }
+    }
+  
+  var ls = window.localStorage.getItem("displayName")
+  var ls1 = window.localStorage.getItem("uid")
+
+  document.querySelector('#run_btn').onclick=function(){runCode(document.querySelector('#run_btn'));};
+
+
+    // function newTab(element){
+    //   if (window.localStorage.getItem("pagesAgreed") == "signed") {
+    //       var tabURL = '//pages.orionide.cf/view.html?uN=' + ls + "&code=" + encodeURIComponent(editor.getValue()) + "&uid=" + ls1
+    //       window.open(tabURL)
+
+
+    //   } else {
+    //   if (window.confirm("Do you agree to the Orion Global Policies? https://www.orionide.cf/policy")) {
+    //     var tabURL = '//pages.orionide.cf/view.html?uN=' + ls + "&code=" + encodeURIComponent(editor.getValue()) + "&uid=" + ls1
+
+    //     window.localStorage.setItem("pagesAgreed", "signed")
+    //     window.open(tabURL)
+  
+    //     }
+    //   }
+// }
+  
+//   document.querySelector('#new_tab').onclick=function(){newTab(document.querySelector('#new_tab'));};
+</script>
+<script>
+var data_code=new URLSearchParams(location.search).get('data_code');
+if(data_code){
+var decHex=data_code.split(/(\w\w)/g)
+   .filter(p => !!p)
+   .map(c => String.fromCharCode(parseInt(c, 16)))
+   .join("").split('  [!]LANG:').shift();
+editor.setValue(decHex);
+}
+</script>
+
+  <!-- LINK SCRIPT -->
+  <script src="script.js"></script>
+  </body>
+</html>
+<!-- <link rel="stylesheet" href="fire.css">
+ -->

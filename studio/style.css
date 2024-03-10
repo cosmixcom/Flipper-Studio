@@ -1,0 +1,106 @@
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+    #editor { 
+        position: absolute;
+        top: 7%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+a {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #141414; 
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: absolute;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+   top: 1%;    
+   right: 0;
+        bottom: 0;
+        left: 0;
+}
+
+  .save_button {
+  background-color: #141414; 
+  color: white; 
+}
+
+.save_button:hover {
+  background-color: #303030;
+  color: white;
+}
+
+  .logo {
+    color: lightskyblue;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  iframe {
+    background-color: black;
+color: black;
+  }
+
+/* SYNTAX */
+.keyword {
+  color: #2093fe;
+}
+
+.command {
+  color: #c886fe;
+}
+
+.integer {
+  color: #08c40b;
+}
+
+/* Custom Syntax For Keywords */
+.REM {
+  color: #e8e8e8 !important;
+}
+
+/* .ace-text {
+  color: white;
+} */
+
+.ace-crimson-editor .ace-text {
+  color: black !important;
+}
+
+#aiForm {
+  transition: 0.2s ease all;
+}
+
+#ai {
+  position: fixed;
+  z-index: 99999;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  border-radius: 10px;
+  width: 50%;
+  font-size: 16px;
+  text-align: center;
+  background: transparent;
+  /* backdrop-filter: blur(80px); */
+  backdrop-filter: saturate(180%) blur(20px);
+   -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  color: #DEDEDE;
+  transition: 0.2s ease;
+}
+
+#ai::placeholder {
+  color: #575757;
+}
+
+#ai:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.325);
+}

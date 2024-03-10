@@ -1,0 +1,36 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  color: #DEDEDE;
+  background-color: black;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div, h3 {
+  cursor: pointer;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  width: 50%;
+  font-size: 16px;
+  text-align: center;
+  background: #262626;
+  color: #DEDEDE;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.325);
+}
