@@ -204,6 +204,7 @@ document.getElementById('aiForm').addEventListener('submit', async (event) => {
         preamble: aiBot,
         model: 'command',
         temperature: 0.9,
+        connectors: [{"id": "web-search"}]
       });
 
       document.getElementById('ai').value = ''
@@ -264,6 +265,13 @@ window.addEventListener('keydown', async function(event) {
   if (event.ctrlKey && event.key === 'i') {
     // Your code to execute on Ctrl+I
     document.getElementById('ai').select()
+    document.getElementById('ai').focus()
+    document.getElementById('ai').click()
+    setTimeout(function() {
+      document.getElementById('ai').select()
+      document.getElementById('ai').focus()
+      document.getElementById('ai').click()
+    }, 500)
     document.getElementById('aiForm').style.display = 'block';
 
     // const prompt = window.prompt('What would you like to ask AI?')

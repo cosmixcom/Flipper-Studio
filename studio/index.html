@@ -105,7 +105,7 @@ editor.setValue(event.target.result, -1);
 function save() {
   if (closed === false) {
     //window.prompt("File name");
-    var savePrompt = `xploit-ducky-${Math.random().toString(36).substring(7)}`
+    var savePrompt = `duckystudio-${Math.random().toString(36).substring(7)}`
     if (savePrompt !== null) {
         var blob = new Blob([editor.getValue()], {type: "text/plain;charset=utf-8"});
         var url = URL.createObjectURL(blob);

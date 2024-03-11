@@ -4,6 +4,8 @@ function runFunctionForProjectKeys() {
       if (key.startsWith("project-")) {
           // Run your function here for keys starting with "project-"
           // For example:
+        console.log(String(key).split('project-')[1])
+        const project = String(key).split('project-')[1]
           // yourFunction(localStorage.getItem(key));
           console.log("Key:", key);
           const div = document.createElement('div')
@@ -12,7 +14,7 @@ function runFunctionForProjectKeys() {
           document.body.append(div)
 
           div.addEventListener('click', () => {
-            window.location = `/studio/?project=${String(key).split('project-')[1]}`
+            window.location = `/studio/?project=${project}`
           })
           // Execute your function here
       }
