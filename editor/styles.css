@@ -1,0 +1,109 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1e1e1e;
+    padding: 10px;
+    box-shadow: 2px 0 5px #333;
+    overflow-y: auto;
+    color: #e0e0e0;
+}
+
+.sidebar input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #555;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.sidebar input::placeholder {
+    color: #e0e0e0;
+}
+
+.sidebar input:focus {
+    border-color: #1a73e8;
+    outline: none;
+    box-shadow: 0 0 3px #1a73e8;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sidebar button:hover {
+    background-color: #135ab3;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.sidebar li:hover {
+    background-color: #444;
+}
+
+.editor {
+    flex: 1;
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+.nested {
+    display: none;
+    padding-left: 20px;
+}
+
+.active {
+    display: block;
+}
+
+.file-manager {
+    margin-bottom: 20px;
+}
+
+.file-manager div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.file-manager input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.file-manager button {
+    padding: 5px 10px;
+    cursor: pointer;
+}

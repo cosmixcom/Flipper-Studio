@@ -18,7 +18,7 @@ Here are all the current and upcoming features along with their roadmap.
 | ------- | ------- |
 | Syntax Highlighting | ✅ |
 | Integrated AI | ✅ |
-| Documentation | - (1-2 Weeks) |
+| Documentation | ❎ (1-2 Weeks) |
 | Export to TXT | ✅ |
 | AI Model Choice | ❎ (1-2 Weeks) |
 

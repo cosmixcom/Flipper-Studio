@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.terminal {
+  width: 100%;
+  /* max-width: 800px; */
+  background-color: #121212;
+  /* border-radius: 8px; */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #3a3a3a;
+  border-bottom: 2px solid #4d4d4d;
+}
+
+.terminal-title {
+  font-size: 1.2em;
+}
+
+.button {
+  background-color: #007acc;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #005f9c;
+}
+
+.status {
+  font-size: 0.9em;
+  color: #aaaaaa;
+}
+
+.terminal-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0;
+  position: relative; /* Make sure the body is positioned relative */
+  overflow-y: auto; /* Add scrollbar when content overflows */;
+}
+
+.output {
+  background-color: #121212;
+  color: #00ff00;
+  padding: 10px;
+  border-radius: 4px;
+  /* overflow-x:  auto;
+  overflow-y: scroll; */
+  /* overflow: hidden; */
+  /* height: 300px; */
+  /* margin-bottom: 10px; */
+  margin: 0;
+  white-space: pre-wrap;
+  /* height: 100%; */
+
+  caret-color: #ffffff;
+  /* caret-width: 2px; */
+}
+
+.output:focus {
+  outline: none;
+}
+
+.terminal-input {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+input {
+  /* flex-grow: 1;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  border: 2px solid #4d4d4d;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 1em;
+  resize: none;
+  outline: none; */
+  outline: none;
+  border: none;
+  background:none;
+  color: #00ff00;
+}
+
+input::placeholder {
+  color: #aaaaaa;
+}
+
+input:focus {
+  border-color: #007acc;
+}
+
+.terminal-input .button {
+  margin-left: 10px;
+}
+
+.terminal-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  /* padding: 10px; */
+  gap: 20px;
+}

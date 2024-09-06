@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipper Studio Projects</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="container">
+        <div class="taskbar">
+            <h1>Flipper Studio Projects</h1>
+
+            <div class="iconsbar">
+                <a href="/cli/" style="text-decoration: none; color: #d4d4d4;">
+                    <span class="material-symbols-outlined">
+                        terminal
+                        </span>
+                </a>
+
+                <a href="https://github.com/cosmixcom/Flipper-Studio/wiki" style="text-decoration: none; color: #d4d4d4;">
+                    <span class="material-symbols-outlined">
+                    help
+                    </span>
+                </a>
+                
+                <span class="material-symbols-outlined" id="newProjectButton">
+                add
+                </span>
+            </div>
+        </div>
+        <ul id="projectList"></ul>
+        <!-- <button id="newProjectButton">Create New Project</button> -->
+    </div>
+
+    <!-- Popup Form -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+          <div class="header">
+            <h2>Create New Project</h2>
+            <button type="button" id="cancelButton">x</button>
+          </div>
+            <!-- <h2>Create New Project</h2> -->
+            <form id="projectForm">
+                <label for="projectName">Project Name:</label>
+                <input type="text" id="projectName" placeholder="New Flipper Studio project" required>
+
+                <label for="projectDescription">Description:</label>
+                <textarea id="projectDescription" placeholder="Description (Optional)"></textarea>
+
+                <label for="projectAuthor">Project Author:</label>
+                <input type="text" id="projectAuthor" value="flipperstudio.">
+
+                <label for="projectType">Project Type:</label>
+                <select id="projectType">
+                    <option value="Bad USB">Bad USB</option>
+                    <option value="Native App">Native App</option>
+                </select>
+
+              <label for="projectVersion">Project Language:</label>
+              <select id="projectVersion">
+                  <option value="ducky">Rubber Ducky</option>
+                  <!-- <option value="Native App">Custom Prog</option> -->
+              </select>
+
+                <button type="submit">Save Project</button>
+            </form>
+        </div>
+    </div>
+
+  
+    <script src="script.js"></script>
+</body>
+</html>

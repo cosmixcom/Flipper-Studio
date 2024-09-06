@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* General Styles */
+/* General Styles */
+body {
+    font-family: "Inter", system-ui;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+#projectList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+    margin-top: 20px;
+    overflow-y: auto;
+    max-height: 450px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgb(26, 26, 26, 0.19);
+}
+
+#projectList li {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+    border-color: #007bff;
+}
+
+#projectList li:hover {
+    border-color: #2f6cac;
+}
+
+#newProjectButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#newProjectButton:hover {
+    background-color: #0056b3;
+}
+
+/* Popup Styles */
+.hidden {
+    display: none !important;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #1e1e1e;
+    padding: 20px;
+    width: 80%;
+    max-width: 70%;
+    height: 60%;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+input, textarea, select {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    /* width: 100%; */
+}
+
+button[type="submit"], #cancelButton {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  max-width: 130px;
+  align-self: right;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.header {
+  max-height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#cancelButton {
+    background-color: transparent;
+    color: white;
+    /* position: absolute;
+    top: 10px;
+    right: 10px; */
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+}
+
+#cancelButton:hover {
+    color: #c82333;
+}
+
+.taskbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.taskbar .iconsbar {
+    justify-content: space-around;
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Apply custom scrollbar for all elements */
+* {
+  scrollbar-width: thin;              /* For Firefox */
+  scrollbar-color: #007bff #121212;   /* For Firefox */
+}
+
+/* Custom Scrollbar for Webkit browsers (Chrome, Safari, etc.) */
+*::-webkit-scrollbar {
+  width: 10px;                        /* Width of the scrollbar */
+    margin-left: 10px;
+    border-radius: 20px; 
+}
+
+/* Track of the scrollbar */
+*::-webkit-scrollbar-track {
+  background-color: #121212;          /* Dark background */
+  border-radius: 10px;                /* Rounded track */
+}
+
+/* Thumb of the scrollbar (the part you drag) */
+*::-webkit-scrollbar-thumb {
+  background-color: #007bff;          /* Scrollbar color */
+  border-radius: 20px;                /* Pill shape */
+  border: 2px solid #242424;          /* Creates spacing from the track */
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipper Studio CLI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <a href="/projects/" style="text-decoration: none; color: #fff;"><div class="terminal-title">Flipper Studio CLI</div></a>
+            <div class="terminal-buttons">
+                <div id="connectionStatus" class="status">Not Connected</div>
+                <button id="connectButton" class="button">Connect</button>
+            </div>
+        </div>
+        <div class="terminal-body">
+            <div id="output" class="output" contenteditable="true" spellcheck="false" data-gramm="false"></div>
+            <!-- <form id="terminal" class="terminal-input">
+                <input id="commandInput" rows="1" placeholder="Enter command...">
+            </form> -->
+        </div>
+    </div>
+
+    <script src="flipper.js"></script>
+</body>
+</html>

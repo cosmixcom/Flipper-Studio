@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ducky Script IDE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="/projects/" style="text-decoration: none; color: #fff;"><h1>Flipper Studio</h1></a>
+        <nav>
+            <button id="load">Load</button>
+            <button id="projects" onclick="window.location = '/projects/'">Projects</button>
+            <button id="documentation" onclick="window.open(`https://github.com/cosmixcom/Flipper-Studio/wiki/Programming-With-Rubber-Ducky`)">Documentation</button>
+            <button id="download">Download File</button>
+            <button id="upload">Upload to Flipper</button>
+        </nav>
+    </header>
+    <form id="aiForm" style="display: none;">
+        <input class="ai" id="ai">
+      </form>
+    <div class="editor-container">
+      <div id="highlighting" aria-hidden="true"></div>
+      <textarea id="editor" spellcheck="false"></textarea>
+        <div id="suggestions" class="suggestions"></div>
+    </div>
+
+    
+<div id="loadProjectPopup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <div class="header">
+            <h2>Create New Project</h2>
+            <button type="button" id="cancelButton">x</button>
+          </div>
+        <form id="loadProjectForm">
+            <label for="fileInput">From File (accepts .txt):</label>
+            <input type="file" id="fileInput" accept=".txt"><br>
+            <label for="githubUrl">From GitHub URL:</label>
+            <input type="text" id="githubUrl" placeholder="Enter GitHub raw URL"><br>
+            <button id="loadProjectBtn" type="submit">Load Project</button>
+        </form>
+    </div>
+</div>
+
+    
+<script>
+    var popup = document.getElementById('loadProjectPopup');
+
+    document.getElementById('load').addEventListener('click', function() {
+        if (popup.style.display !== 'block') {
+            popup.style.display = '';
+        } else {
+            popup.style.display = 'none';
+        }
+    });
+
+    document.getElementById('cancelButton').addEventListener('click', function() {
+        popup.style.display = 'none';
+    })
+</script>
+
+    <script src="script.js"></script>
+</body>
+</html>

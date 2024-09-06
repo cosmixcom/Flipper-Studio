@@ -1,0 +1,325 @@
+/* General styles */
+/* body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+/* Header styles */
+header {
+    background-color: #121212;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #444;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav button {
+    background: none;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: color 0.3s;
+}
+
+nav button:hover {
+    /* background-color: #777; */
+  color: #d4d4d4;
+}
+
+body {
+  font-family: "Inter", system-ui;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #d4d4d4;
+  overflow: hidden;
+}
+
+.editor-container {
+  width: 98vw;
+  height: 90vh;
+  margin: 0;
+  position: relative;
+}
+
+.editor {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 16px;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  background-color: #121212;
+  color: #d4d4d4;
+  outline: none;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+
+.keyword {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.suggestions {
+  position: absolute;
+  background-color: #2c2c2c;
+  color: #888;
+  display: none;
+  font-size: 16px;
+  padding: 2px 5px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.suggestion-item {
+  display: inline;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #444;
+  color: #ccc;
+}
+
+.number {
+  color: #08c40b;
+}
+
+.command {
+  color: #c886fe;
+}
+
+#aiForm {
+  transition: 0.2s ease all;
+}
+
+#ai {
+  position: fixed;
+  z-index: 999999999;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  border-radius: 10px;
+  width: 50%;
+  font-size: 16px;
+  text-align: center;
+  background: transparent;
+  /* backdrop-filter: blur(80px); */
+  backdrop-filter: saturate(180%) blur(20px);
+   -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  color: #DEDEDE;
+  transition: 0.2s ease;
+}
+
+#ai::placeholder {
+  color: #575757;
+}
+
+#ai:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.325);
+}
+
+.comment {
+    color: #666; /* Darker gray for comments */
+    font-style: italic;
+}
+
+.editor-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Set to the background color of your editor */
+  box-sizing: border-box;
+}
+
+#highlighting {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* height: 100%; */
+  color: #d4d4d4;
+  padding: 8px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  /* font-family: monospace; */
+  pointer-events: none; /* Make it non-interactive */
+
+  font-size: 16px !important;
+  background-color: #121212;
+  width: 98vw;
+  height: 90vh;
+  caret-color: #d4d4d4;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+#editor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98vw;
+  height: 90vh;
+  padding: 8px;
+  /* font-family: monospace; */
+  background: transparent; /* Transparent background */
+  /* color: black; */
+  caret-color: #d4d4d4;
+  border: none;
+  outline: none;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  /* resize: none; */
+  box-sizing: border-box;
+  /* color: #d4d4d4; */
+  font-size: 16px !important;
+  z-index: 1;
+
+  
+  color: transparent;
+}
+
+/* Ensure consistency between the textarea and highlighting */
+#highlighting, #editor {
+  letter-spacing: normal;
+  line-height: 19px;
+  font-family: "Inter", system-ui;
+  overflow-y: scroll !important;
+}
+
+/* Custom scrollbar styles */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #333;
+}
+
+/* WebKit based browsers */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #333;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 3px solid #333;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999999999999999999999999999999;
+}
+
+.popup-content {
+  background: #1e1e1e;
+  padding: 20px;
+  width: 80%;
+  max-width: 70%;
+  height: 60%;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+input, textarea, select {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  /* width: 100%; */
+}
+
+button[type="submit"], #cancelButton {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+max-width: 130px;
+align-self: right;
+font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+#cancelButton {
+  background-color: transparent;
+  color: white;
+  /* position: absolute;
+  top: 10px;
+  right: 10px; */
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+#cancelButton:hover {
+  color: #c82333;
+}
+
+.header {
+  max-height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
