@@ -1,26 +1,24 @@
-<picture>
-    <source media="(prefers-color-scheme: dark)" srcset="/dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="/light.png">
-    <img
-        alt="A rubber ducky with the Duck Studio logo."
-        src="/light.png">
-</picture>
+# Flipper Studio
 
-# Ducky Studio
-
-Ducky Studio is an integrated development environment (aka IDE) that makes development in the Rubber Ducky 1.0 language simple. You can refer to the docs for Rubber Ducky 1.0 [here](https://web.archive.org/web/20220816200129/http://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript#ducky-script).
+Flipper Studio is a simple-to-use IDE for all Flipper-related software. Currently, Flipper Studio supports the use of Flipper Zero CLI, the design of BadUSB/BadBT apps using Rubber Ducky 1.0, and the creation of Flipper Zero Applications.
 
 ## Features
 
-Here are all the current and upcoming features along with their roadmap.
+- Access Flipper Zero CLI
+- Boots BadUSB files directly to device via serial port
+- File imports
+- Integrated AI For BadUSB (ctrl + i)
 
-| Feature | Roadmap |
-| ------- | ------- |
-| Syntax Highlighting | ✅ |
-| Integrated AI | ✅ |
-| Documentation | ❎ (1-2 Weeks) |
-| Export to TXT | ✅ |
-| AI Model Choice | ❎ (1-2 Weeks) |
+## Roadmap
+
+### App Building
+While you can currently design apps for Flipper devices with our Native App feature, you cannot build them for the Flipper directly.
+
+### CLI Tools
+A more immersive CLI experience that provides custom Flipper Studio commands, for terminal-like features, and the ability to run scripts which execute more than one command.
+
+## Documentation
+You can read the documentation at https://github.com/cosmixcom/Flipper-Studio/wiki.
 
 ## Disclaimer
 
