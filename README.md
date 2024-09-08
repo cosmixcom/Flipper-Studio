@@ -2,6 +2,8 @@
 
 Flipper Studio is a simple-to-use IDE for all Flipper-related software. Currently, Flipper Studio supports the use of Flipper Zero CLI, the design of BadUSB/BadBT apps using Rubber Ducky 1.0, and the creation of Flipper Zero Applications.
 
+Flipper Studio is a static web application so you can run it from almost any device, no backend needed.
+
 ## Features
 
 - Access Flipper Zero CLI
